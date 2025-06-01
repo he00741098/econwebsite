@@ -1,0 +1,50 @@
+---
+import HeaderComponent from "../components/HeaderComponent.astro"
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>We who love gambling</title>
+	</head>
+	<body>
+	  <div class="header">
+	    <HeaderComponent name="Home" href="/"></HeaderComponent>
+	    <HeaderComponent name="Market Structure" href="/firmstructure"></HeaderComponent>
+	    <HeaderComponent name="Costs" href="/costs"></HeaderComponent>
+	    <HeaderComponent name="Externalities" href="/gov"></HeaderComponent>
+	    <HeaderComponent name="Consumer Behavior" href="/demand"></HeaderComponent>
+	    <HeaderComponent name="Sources" href="/sources"></HeaderComponent>
+	  </div>
+	  <div class="slot">
+		  <slot/>
+    </div>
+		<div class="footer"> footer </div>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+}
+.header{
+width:100%;
+height: 30px;
+box-shadow: 1px 1px 0px 0px black;
+display: grid;
+grid-template-columns: 10% 10% 10% 10% 10% 10%;
+align-content: center;
+position:relative;
+}
+.slot{
+position:relative;
+min-height: calc(100% - 30px);
+}
+</style>

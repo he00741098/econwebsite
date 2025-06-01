@@ -1,0 +1,22 @@
+---
+const { name, href } = Astro.props;
+---
+<div class="header-component">
+  <a href={href}>{name}</a>
+</div>
+<style>
+.header-component{
+display:grid;
+width:200px;
+height:fit-content;
+justify-content:center;
+align-content:center;
+text-align:center;
+}
+a{
+width:100%;
+text-decoration: none;
+color: black;
+}
+
+</style>
