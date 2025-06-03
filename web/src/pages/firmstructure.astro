@@ -1,110 +1,111 @@
 ---
 import EconLayout from '../layouts/EconLayout.astro';
 import Term from '../components/Term.astro';
+import Body from '../components/Body.astro';
+import Description from '../components/Description.astro';
+import Title from '../components/Title.astro';
 ---
 
 <EconLayout>
-	<div class="bod">
-		<h1>
+  <Body>
+	  <Title>
 		  Market Structure
-		</h1>
-		<p class="description">
-The online sports betting industry in the United States operates within a distinct market structure, primarily defined by its concentrated nature and the strategic behaviors of its leading participants.
-		</p>
-		<p class="description">
-The Online Sports Betting market is an <Term>Oligopoly,</Term>a type of firm structure where the majority of the market share is controlled by a few companies.  In this case, the two dominant firms are DraftKings and Fanduel, owning 32 and 35% of the market respectively.
-		</p>
-		<p class="description">
-Theoretical <Term>Game theory</Term>table on Impact of changing advertising spending. Numbers are in $ of revenue/$ of advertising spent. A key way of obtaining customers for these online sportsbooks is through <Term>non-price competition.</Term>Notably, Draft kings and Fanduel have changed advertising expenditures throughout the past few years, and in comparing their relative expenditures, we can obtain a game theory table describing the returns gained per advertising dollar spent.
-		</p>
-		<p class="table" id="gameTheory">
-
-		</p>
-
-		<table>
-  <caption>
-Theoretical Game theory table
-  </caption>
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col">Fanduel</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td>Spend More</td>
-      <td>Spend Less</td>
-    </tr>
-    <tr>
-      <th scope="row">DraftKings</th>
-      <td>Spend More</td>
-      <td>1.61, 2.90</td>
-      <td>4.00, 2.82</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>Spend Less</td>
-      <td>1.51, 2.24</td>
-      <td>3.05, 4.80</td>
-    </tr>
-  </tbody>
-		</table>
-	</div>
+	  </Title>
+		<Description>
+      The online sports betting industry in the United States operates within a distinct market structure, primarily defined by its concentrated nature and the strategic behaviors of its leading participants.
+		</Description>
+		<Description>
+      The Online Sports Betting market is an <Term>Oligopoly,</Term>a type of firm structure where the majority of the market share is controlled by a few companies.  In this case, the two dominant firms are DraftKings and Fanduel, owning 32 and 35% of the market respectively.
+		</Description>
+		<Description>
+      See below for a Theoretical <Term>Game theory</Term>table on Impact of changing advertising spending. Numbers are in $ of revenue/$ of advertising spent. A key way of obtaining customers for these online sportsbooks is through <Term>non-price competition.</Term>Notably, Draft kings and Fanduel have changed advertising expenditures throughout the past few years, and in comparing their relative expenditures, we can obtain a game theory table describing the returns gained per advertising dollar spent. According to this table, DraftKings has a dominant strategy of spending more and the Nash Equilibrium is at Fanduel spending less and DraftKings spending more.
+		</Description>
+		<div class="table" id="gameTheory">
+		  <table>
+        <caption>
+          Theoretical Game theory table
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Fanduel</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>Spend More</td>
+            <td>Spend Less</td>
+          </tr>
+          <tr>
+            <th scope="row">DraftKings</th>
+            <td>Spend More</td>
+            <td>1.61, 2.90</td>
+            <td>4.00, 2.82</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Spend Less</td>
+            <td>1.51, 2.24</td>
+            <td>3.05, 4.80</td>
+          </tr>
+        </tbody>
+		  </table>
+		</div>
+		<Description>
+		  Recently, the two companies have been accused of collusion, controlling the market through illegal collaboration, and stifling competition by blocking smaller companies from accessing key business partnerships and technology. Additionally, they attempted to merge in 2017, but was blocked by the FTC.
+		</Description>
+</Body>
 </EconLayout>
 <style>
-.description{
-text-align:center;
-font-size:20px;
-}
-.bod{
-width: 80%;
-position:relative;
-left:10%;
+.table{
+width:100%;
+display:grid;
+justify-content: center;
+align-content: center;
 }
 table {
-  border-collapse: collapse;
-  border: 2px solid rgb(140 140 140);
-  font-family: sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+border-collapse: collapse;
+border: 2px solid rgb(140 140 140);
+font-family: sans-serif;
+font-size: 0.8rem;
+letter-spacing: 1px;
 }
 
 caption {
-  caption-side: bottom;
-  padding: 10px;
-  font-weight: bold;
+caption-side: bottom;
+padding: 10px;
+font-weight: bold;
 }
 
 thead,
 tfoot {
-  background-color: rgb(228 240 245);
+background-color: #3a3a3a;
 }
 
 th,
 td {
-  border: 1px solid rgb(160 160 160);
-  padding: 8px 10px;
+border: 1px solid rgb(160 160 160);
+padding: 8px 10px;
 }
 
 td:last-of-type {
-  text-align: center;
+text-align: center;
 }
 
 tbody > tr:nth-of-type(even) {
-  background-color: rgb(237 238 242);
+background-color: #3a3a3a;
 }
 
 tfoot th {
-  text-align: right;
+text-align: right;
 }
 
 tfoot td {
-  font-weight: bold;
+font-weight: bold;
 }
 
 </style>

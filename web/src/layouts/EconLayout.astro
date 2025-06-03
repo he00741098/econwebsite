@@ -1,5 +1,6 @@
 ---
 import HeaderComponent from "../components/HeaderComponent.astro"
+import logo from "../assets/logo.svg";
 ---
 
 <!doctype html>
@@ -8,40 +9,84 @@ import HeaderComponent from "../components/HeaderComponent.astro"
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
 		<meta name="generator" content={Astro.generator} />
 		<title>We who love gambling</title>
 	</head>
 	<body>
 	  <div class="header">
+			<div class="logo"><img  class="logoimg" src={logo.src}></div>
+			<div class="links">
 	    <HeaderComponent name="Home" href="/"></HeaderComponent>
 	    <HeaderComponent name="Market Structure" href="/firmstructure"></HeaderComponent>
 	    <HeaderComponent name="Costs" href="/costs"></HeaderComponent>
 	    <HeaderComponent name="Externalities" href="/gov"></HeaderComponent>
-	    <HeaderComponent name="Consumer Behavior" href="/demand"></HeaderComponent>
+	    <!-- <HeaderComponent name="Consumer Behavior" href="/demand"></HeaderComponent> -->
 	    <HeaderComponent name="Sources" href="/sources"></HeaderComponent>
+			</div>
+	    
 	  </div>
 	  <div class="slot">
 		  <slot/>
     </div>
-		<div class="footer"> footer </div>
+		<!-- <div class="footer"> footer </div> -->
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+.links{
+display:grid;
+width:100%;
+height:100%;
+grid-template-columns: 10% 10% 10% 10% 10%;
+justify-content: center;
+align-content: center;
+/* float: left; */
+}
+.logoimg{
+width:38px;
+height:38px;
+}
+.logo{
+height:100%;
+width:100%;
+display: grid;
+justify-content: center;
+align-content: center;
+
+}
+
+html,
+body {
+margin: 0;
+width: 100%;
+/* min-height:110%; */
+height: 100%;
+
+background-color:#1a1a1a;
+color:white;
+font-family: "Oswald", sans-serif;
+font-style: normal;
+/* font-size:40px; */
 }
 .header{
-width:100%;
-height: 30px;
+width:60%;
+opacity:0.5;
+height: 36px;
 box-shadow: 1px 1px 0px 0px black;
 display: grid;
-grid-template-columns: 10% 10% 10% 10% 10% 10%;
+grid-template-columns: 40px calc(100% - 40px);
 align-content: center;
-position:relative;
+position:fixed;
+left:20%;
+background-color:black;
+top:10px;
+border-radius:10px 10px 10px 10px;
+
+z-index: 100000;
 }
 .slot{
 position:relative;

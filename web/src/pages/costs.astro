@@ -1,9 +1,49 @@
 
 ---
 import EconLayout from '../layouts/EconLayout.astro';
+import Term from '../components/Term.astro';
+import Body from '../components/Body.astro';
+import Description from '../components/Description.astro';
+import Title from '../components/Title.astro';
+import Graph from '../components/Graph.astro';
 
+import costCurves from '../assets/costCurves.svg';
+import econscale from '../assets/econscale.svg'
 ---
 
 <EconLayout>
-	<p>hi</p>
+	<Body>
+		<Title>
+			Costs
+		</Title>
+
+		<Graph src={costCurves.src} />
+
+		<Description>
+Assuming that DraftKings is <Term>profit maximizing,</Term>and producing at the point MC=MR, the graph demonstrates the loss that draft kings had last quarter. They made an average of $108 from each paying user, and its total costs amounted to $112 per user, resulting in a $4 loss from each user. However, since DraftKings has not shut down, we believe that their price curve is still above the AVC and thus continue operating.
+		</Description>
+		<Description>
+The gambling market is <Term>price discriminating,</Term>always charging each user the maximum amount they are willing to pay, and thus has no consumer surplus. This causes the gambling market's price curve and its marginal revenue curve to become equal to each other. Since Draftkings is operating at a loss, the ATC curve is above the point where MR=MC. 
+		</Description>
+
+		<Graph src={econscale.src} />
+
+		<Description>
+While DraftKings is currently still not making a positive net income, its trends in net income show a decreasing amount of losses as its user base increases. This suggests that DraftKings is experiencing some level of <Term>economies of scale,</Term>meaning that as more users join the platform, the company has decreased average total cost. In Draft Kings LRATC curve, economies of scale are indicated by the fact they are on the downwarding sloping portion of the curve. In the future ATC will likely decrease by less and less until it eventually starts increasing, indicating that DraftKings is now experiencing economies of scale.
+		</Description>
+		<br>
+
+		<Title>
+	Demand shifters/Population preferences/Elasticity: 
+		</Title>
+		<Description>
+
+The <Term>Income-Elasticity</Term> of Gambling is a complicated topic as the effect of consumer income on demand is not consistent. On one hand, people with higher incomes tend to place bigger bets and activities like betting on horse racing are most common among the wealthy. This suggests that gambling is a <Term>normal good,</Term>a product whose demand will increase with high average incomes. However, increased debt can lead to an individual to gamble more and gambling turnover actually increases with lower incomes. These factors suggest gambling is an <Term>inferior good,</Term>with lower incomes and recessionary markets benefitting the demand for gambling.
+		</Description>
+
+
+		<br>
+</Body>
 </EconLayout>
+
+
